@@ -1,0 +1,22 @@
+<nav class="nav">
+  <div>
+    <div class="nav-title">
+      To Do App
+    </div>
+  </div>
+  <div class="dropdown" id="user-icon" data-id="<%= user.id %>">
+    <div>
+      <a href="#" data-toggle="modal" data-target="#modalRegisterForm"><i class="far fa-comment" data-toggle="modal"
+          data-target="#modalRegisterForm"></i>
+        <span id="edit">Edit</span>
+      </a>
+      <i class="fas fa-user-astronaut"></i>
+    </div>
+    <div class="username-holder"><%= user.name %></div>
+    <div class="dropdown-content">
+      <form action="/logout" method="POST">
+        <div id="logout">Logout</div>
+      </form>
+    </div>
+  </div>
+</nav>
