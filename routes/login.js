@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 
 
 module.exports = () => {
-  //login/register page
 
   router.get('/', (req, res) => {
     //to check if user is logged in
