@@ -1,8 +1,9 @@
+@charset "UTF-8";
 header {
   height: 120px;
   background: #cbe1e3;
   color: #001f73;
-  font-size: 20px;
+  font-size: 50px;
   font-family: Frutiger Linotype;
   position: fixed;
   width: 100%;
@@ -20,6 +21,11 @@ i {
   margin-top: 20px;
 }
 
+.header-right {
+  float: right;
+  padding: 15px;
+}
+
 .header-right a {
   text-decoration: none;
 }
@@ -35,21 +41,20 @@ nav {
 
 .nav-area a {
   font-size: 40px;
-  color: #e3e7eef5;
+  color: rgba(227, 231, 238, 0.9607843137);
   text-decoration: none;
   text-align: center;
   padding-top: 20px;
 }
 
 .nav-area a:hover {
-  color: #040608f5;
+  color: rgba(4, 6, 8, 0.9607843137);
 }
 
 .home {
   background: #899FCF;
   flex: 1;
 }
-
 
 .eat {
   background: #768CC4;
@@ -83,100 +88,23 @@ nav {
 
 main {
   padding-top: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   background: rgb(158, 205, 215);
   margin-left: 200px;
+  padding-bottom: 150px;
 }
 
-main > div {
-  background-color: #f1f1f1;
-  width: 500px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 100px;
-  text-align: center;
-  line-height: 500px;
-  font-size: 30px;
-}
-
-.newtask {
-  padding-top: 200px;
-  margin-left: 200px;
-  display: flex;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  top: 120px;
-  height: 85%;
-}
-
-.nav-area a {
+main > div > ul {
   font-size: 40px;
-  color: #e3e7eef5;
-  text-decoration: none;
-  text-align: center;
-  padding-top: 20px;
+  margin-left: 150px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
 }
 
-.nav-area a:hover {
-  color: #040608f5;
-}
-
-.home {
-  background: #899FCF;
-  flex: 1;
-}
-
-.eat {
-  background: #768CC4;
-  flex: 1;
-}
-
-.watch {
-  background: #6279B8;
-  flex: 1;
-}
-
-.read {
-  background: #49516F;
-  flex: 1;
-}
-
-.buy {
-  background: #496F5D;
-  flex: 1;
-}
-
-.do {
-  background: #4C9F70;
-  flex: 1;
-}
-
-.other {
-  background: #6BB089;
-  flex: 1;
-}
-
-main {
-  padding-top: 100px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background: rgb(158, 205, 215);
+main > div > li {
+  font-size: 25px;
   margin-left: 200px;
-}
-
-main > div {
-  background-color: #f1f1f1;
-  width: 500px;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 100px;
-  text-align: center;
-  line-height: 500px;
-  font-size: 30px;
+  padding-bottom: 100px;
+  list-style: "✓ ";
 }
 
 .newtask {
@@ -191,13 +119,19 @@ main > div {
   text-align: center;
 }
 
-.taskarea{
+.taskarea {
   margin-top: 5px;
   font-size: 20px;
 }
 
 .tasktext {
   font-size: 30px;
+}
+
+.taskbutton {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .taskarea {
@@ -214,6 +148,10 @@ table, th, td {
 th, td {
   padding: 30px;
   font-size: 25px;
+}
+
+td a {
+  text-decoration: none;
 }
 
 th {
@@ -261,11 +199,48 @@ body {
   width: 30%;
 }
 
-#profileform {
-  padding: 40px;
+.btnn {
+  background-color: #6BB089;
+  font-size: 30px;
+  padding: 10px;
+  border: 2px solid;
+  border-radius: 20px;
 }
 
-.completed {
-  padding-top: 10px;
+caption {
+  font-size: 50px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
+}
 
+.editform {
+  margin-top: 100px;
+  margin-left: 100px;
+  text-align: center;
+  padding: 100px;
+}
+
+.wrapper label {
+  display: block;
+}
+
+.tasklabel {
+  font-size: 30px;
+}
+
+.taskname {
+  font-size: 20px;
+}
+
+.category {
+  font-size: 20px;
+}
+
+.catname {
+  padding-top: 20px;
+  font-size: 30px;
+}
+
+.edit {
+  margin-top: 20px;
 }

@@ -1,0 +1,18 @@
+<header>
+  <a href="/" class="title">SMART TO DO</a>
+  <i class="fa-solid fa-bolt-lightning fa-beat"></i>
+  <div class="header-right">
+    <% if (user) { %>
+      <div style="font-size: 25px" style="margin-left: 1em">Logged in as: <%= username.username %></div>
+      <form method="POST" action="/logout">
+        <button type="submit">Logout</button>
+        <button type="submit"><a href="/profile">Edit Profile</a></button>
+      </form>
+    <% } else { %>
+    <form>
+        <button type="submit"><a href="/login">Login</a></button>
+        <button type="submit"><a href="/register">Register</a></button>
+    </form>
+    <% } %>
+  </div>
+</header>

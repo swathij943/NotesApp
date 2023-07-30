@@ -4,21 +4,56 @@
 <head>
   <title>Home Page</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
 
-  <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/7d828f8d7a.js" crossorigin="anonymous"></script>
+
+  <script src="/scripts/index.js"></script>
+
+
 </head>
 
-<body>
-  <h1>Have fun! 🥔</h1>
-</body>
+<%- include('partials/_header') %>
+
+<nav class="nav-area">
+    <a class="home" href="/">Home</a>
+    <a class="eat" href="/tasks/1">Eat</a>
+    <a class="watch" href="/tasks/2">Watch</a>
+    <a class="read" href="/tasks/3">Read</a>
+    <a class="buy" href="/tasks/4">Buy</a>
+    <a class="do" href="/tasks/5">Do</a>
+    <a class="other" href="/tasks/6">Other</a>
+</nav>
+
+<section class="newtask">
+  <form class="newtaskbtn" method="POST" action="/gotochat" id="newtaskbtn" name="newtaskbtn">
+    <label for="tasktext" class="tasktext">What task would you like to add today?</label>
+    <br>
+    <textarea name="taskarea" class="taskarea" id="taskarea"></textarea>
+    <div class="taskbutton">
+      <button type="submit" class="btn btn-secondary btn-lg" id="newtaskbtn">Add Task</button>
+    </div>
+  </form>
+</section>
+
+<main>
+  <div>
+    <% for (let row in allTasks) { %>
+      <ul><%= allTasks[row].cat_name %></ul>
+      <li><%= allTasks[row].name %></li>
+      <hr>
+      <% } %>
+  </div>
+</main>
 
 </html>

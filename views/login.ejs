@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Login</title>
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script defer src="/scripts/app.js"></script>
+
+  <script src="https://kit.fontawesome.com/7d828f8d7a.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <%- include('partials/_header') %>
+
+  <div class="container">
+    <div class="img-container">
+      <div class="buttons">
+        <div class="btn-login">
+          <span>Login</span>
+        </div>
+        <div class="btn-register">
+          <span>Register</span>
+        </div>
+      </div>
+    </div>
+
+  <%- include('partials/_header') %>
+
+  <div class="login">
+      <h1>Welcome back!</h1>
+    <div class="login-form">
+      <form method="POST" action="/login" id="login">
+      <div class="form-group">
+        <label>Email Address: </label>
+        <input type="email" class="form-control" name="email" placeholder="Enter Email" required="required">
+      </div>
+      <div class="form-group">
+      <label>Password: </label>
+      <input type="password" class="form-control" name="password" placeholder="Enter Password" required="required">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-light">Login</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.getElementById('login').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      var emailInput = document.querySelector('input[name="email"]');
+      var passwordInput = document.querySelector('input[name="password"]');
+      var email = emailInput.value;
+      var password = passwordInput.value;
+
+      fetch('/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email, password: password })
+      }).then(function(response) {
+        if(response.ok) {
+          console.log("Login successful!");
+          // Handle successful login here (e.g. redirecting to another page or updating the UI)
+        } else {
+          console.log("Login failed!");
+          // Handle login failure here (e.g. displaying an error message)
+        }
+      }).catch(function(error) {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+</body>
+</html>

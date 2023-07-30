@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Profile Page</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css"/>
+  <link rel="stylesheet" href="/styles/layout.css" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+
+  <script src="https://kit.fontawesome.com/7d828f8d7a.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+  <%- include('partials/_header') %>
+
+  <nav class="nav-area">
+    <a class="home" href="/">Home</a>
+    <a class="eat" href="/tasks/1">Eat</a>
+    <a class="watch" href="/tasks/2">Watch</a>
+    <a class="read" href="/tasks/3">Read</a>
+    <a class="buy" href="/tasks/4">Buy</a>
+    <a class="do" href="/tasks/5">Do</a>
+    <a class="other" href="/tasks/6">Other</a>
+  </nav>
+  <nav class="nav-area">
+    <a class="home" href="/">Home</a>
+    <a class="eat" href="/tasks/1">Eat</a>
+    <a class="watch" href="/tasks/2">Watch</a>
+    <a class="read" href="/tasks/3">Read</a>
+    <a class="buy" href="/tasks/4">Buy</a>
+    <a class="do" href="/tasks/5">Do</a>
+    <a class="other" href="/tasks/6">Other</a>
+  </nav>
+
+  <main>
+    <div class="profileform" style="padding: 20px;">
+          <h1>User Profile</h1>
+  <main>
+    <div class="profileform" style="padding: 20px;">
+          <h1>User Profile</h1>
+            <hr>
+            <form method="POST" name="update-profile">
+            <div class="form-group2" style="padding: 10px;">
+              <label>User ID</label>
+              <input type="id" class="form-control" name="id"
+                value="<%= user.username %>" disabled>
+            </div>
+
+            <div class="form-group2" style="padding: 10px;">
+              <label>Email Address</label>
+              <input
+              type="email"
+              class="form-control"
+              name="email"
+              value="<%= user.email %>">
+            </div>
+
+            <div class="form-group2" style="padding: 10px;">
+              <label>Username</label>
+              <input
+              type="name"
+              class="form-control"
+              name="username"
+              value="<%= user.name %>">
+            </div>
+
+            <div class="form-group2" style="padding: 10px;">
+              <label>Password</label>
+              <input
+              type="password"
+               class="form-control"
+               name="password"
+               value="<%= user.password %>">
+            </div>
+
+            <div class="form-group2" style="padding: 10px;">
+              <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+      </div>
+    </main>
+
+
+
+</html>
